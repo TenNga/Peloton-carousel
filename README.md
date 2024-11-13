@@ -4,7 +4,7 @@ This is a small project to give myself a practice on creating carousel with infi
 
 ## following is the screenshot of what I'm planning to create:
 
-!()[https://github.com/TenNga/Peloton-website-carousel/blob/main/screenShot.png]
+![](https://github.com/TenNga/Peloton-website-carousel/blob/main/screenShot.png)
 
 ## following is folder structure
 
