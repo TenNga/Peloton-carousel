@@ -12,6 +12,7 @@
 
 .carousel-container {
   width: 100%;
+  position: relative;
 }
 
 .slide-controls {
@@ -23,27 +24,35 @@
   height: 32px;
   padding: 8px;
   background-color: #D3D3D3;
-  border-radius: 50%;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  position: absolute;
+  top: 76px;
+  z-index: 1;
+  opacity: 0.6;
   transition: 0.3s;
   -webkit-transition: 0.3s;
   -moz-transition: 0.3s;
   -ms-transition: 0.3s;
   -o-transition: 0.3s;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  &:hover {
+    opacity: 1;
+  }
 }
 
-.slide-control:hover {
-  background-color: rgb(33, 33, 33);
-  & svg{
-    fill: white;
-  }
+.slide-prev-btn {
+  left: 1rem;
+}
+
+.slide-next-btn {
+  right: 1rem;
 }
 
 .slide-container {
@@ -69,6 +78,7 @@
   border-radius: 8px;
   width: 288px;
   height: 192px;
+  position: relative;
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
   -ms-border-radius: 8px;
@@ -89,6 +99,47 @@
       -moz-transform: scale(1.05);
       -ms-transform: scale(1.05);
       -o-transform: scale(1.05);
+  }
 }
+
+.workout-icon {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  padding: 0.5rem;
+  background-color: rgb(228, 230, 231);
+  border-radius: 50%;
+  overflow: visible;
+  transition: 0.3s ease-in-out;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  & svg {
+    max-width: 20px;
+    max-height: 20px;
+    color: rgb(42, 41, 41);
+  }
 }
+
+.card-heading {
+  font-size: 1rem;
+  line-height: 1.25;
+  text-transform: capitalize;
+}
+
+.card-link {
+  display: inline-block;
+  color: rgb(101, 102, 106);
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 1.333;
+
+  & a {
+    color: inherit;
+    text-transform: capitalize;
+  }
+}
+
+
 
