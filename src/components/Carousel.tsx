@@ -1,25 +1,12 @@
 import React from 'react'
-import prevIcon from '../assets/icons/prevIcon.svg';
-import nextIcon from '../assets/icons/nextIcon.svg';
+import {ReactComponent as PrevIcon } from '../assets/icons/prevIcon.svg';
+import {ReactComponent as NextIcon } from '../assets/icons/nextIcon.svg';
 import { cards } from '../constants/appConstants';
+import Card from './Card';
 
 const Carousel = () => {
 
-    const renderSlides = cards.map(card => (
-        <li key={card.heading}>
-            <div>
-                <article>
-                    <a href={card.link}>
-                        <img src={card.imageURL} alt={card.heading} />
-                    </a>
-                    <h2>{card.heading}</h2>
-                    <p>
-                        <a href={card.link}>{card.linkText}</a>
-                    </p>
-                </article>
-            </div>
-        </li>
-    ))
+    const renderSlides = cards.map(card => <Card card={card} />)
 
   return (
     <section>
@@ -28,12 +15,12 @@ const Carousel = () => {
             <ul className='slide-controls'>
                 <li className='slide-prev-btn'>
                     <button>
-                        {prevIcon}
+                        <PrevIcon />
                     </button>
                 </li>
                 <li className='slide-next-btn'>
                     <button>
-                        {nextIcon}
+                        <NextIcon />
                     </button>
                 </li>
             </ul>

@@ -1,24 +1,24 @@
-import { card } from "../types/globle";
-import strengthIcon from '../assets/strengthIcon.svg';
-import cyclingIcon from '../assets/cyclingIcon.svg';
-import yogaIcon from '../assets/yogaIcon.svg';
-import runningIcon from '../assets/runningIcon.svg';
-import boxingIcon from '../assets/boxingIcon.svg';
-import rowingIcon from '../assets/rowingIcon.svg';
-import meditationIcon from '../assets/meditationIcon.svg';
-import barreIcon from '../assets/barreIcon.svg';
-import stretchingIcon from '../assets/stretchingIcon.svg';
-import walkingIcon from '../assets/walkingIcon.svg';
-import pilatesIcon from '../assets/pilatesIcon.svg';
+import { cardType } from "../types/globle";
+import {ReactComponent as StrengthIcon} from '../assets/icons/strengthIcon.svg';
+import {ReactComponent as CyclingIcon} from '../assets/icons/cyclingIcon.svg';
+import {ReactComponent as YogaIcon} from '../assets/icons/yogaIcon.svg';
+import {ReactComponent as RunningIcon} from '../assets/icons/runningIcon.svg';
+import {ReactComponent as BoxingIcon} from '../assets/icons/boxingIcon.svg';
+import {ReactComponent as RowingIcon} from '../assets/icons/rowingIcon.svg';
+import {ReactComponent as MeditationIcon} from '../assets/icons/meditationIcon.svg';
+import {ReactComponent as BarreIcon} from '../assets/icons/barreIcon.svg';
+import {ReactComponent as StretchingIcon} from '../assets/icons/stretchingIcon.svg';
+import {ReactComponent as WalkingIcon} from '../assets/icons/walkingIcon.svg';
+import {ReactComponent as PilatesIcon} from '../assets/icons/pilatesIcon.svg';
 
-export const cards: card[] = [
+export const cards: cardType[] = [
   {
     imageURL:
       "https://res.cloudinary.com/peloton-cycle/image/fetch/dpr_1.0,f_auto,q_auto:good,w_600/https://images.ctfassets.net/7vk8puwnesgc/3Tygq87mpjCysd6dRomamP/d8a7b4f46a0c45eb3ff95a1a2e186d84/strength.png",
     heading: "strength",
     linkText: "preview strength classes",
     link: "https://www.onepeloton.com/classes/strength",
-    workoutIcon: strengthIcon
+    workoutIcon: StrengthIcon
   },
   {
     imageURL:
@@ -26,7 +26,7 @@ export const cards: card[] = [
     heading: "cycling",
     linkText: "preview cycling classes",
     link: "https://www.onepeloton.com/classes/cycling",
-    workoutIcon: cyclingIcon
+    workoutIcon: CyclingIcon
   },
   {
     imageURL:
@@ -34,7 +34,7 @@ export const cards: card[] = [
     heading: "yoga",
     linkText: "preview yoga classes",
     link: "https://www.onepeloton.com/classes/yoga",
-    workoutIcon: yogaIcon
+    workoutIcon: YogaIcon
   },
   {
     imageURL:
@@ -42,7 +42,7 @@ export const cards: card[] = [
     heading: "running",
     linkText: "preview running classes",
     link: "https://www.onepeloton.com/classes/running",
-    workoutIcon: runningIcon
+    workoutIcon: RunningIcon
   },
   {
     imageURL:
@@ -50,7 +50,7 @@ export const cards: card[] = [
     heading: "boxing",
     linkText: "preview boxing classes",
     link: "https://www.onepeloton.com/classes/boxing",
-    workoutIcon: boxingIcon
+    workoutIcon: BoxingIcon
   },
   {
     imageURL:
@@ -58,7 +58,7 @@ export const cards: card[] = [
     heading: "rowing",
     linkText: "preview rowing classes",
     link: "https://www.onepeloton.com/classes/rowing",
-    workoutIcon: rowingIcon
+    workoutIcon: RowingIcon
   },
   {
     imageURL:
@@ -66,7 +66,7 @@ export const cards: card[] = [
     heading: "meditation",
     linkText: "preview meditation classes",
     link: "https://www.onepeloton.com/classes/meditation",
-    workoutIcon: meditationIcon
+    workoutIcon: MeditationIcon
   },
   {
     imageURL:
@@ -74,7 +74,7 @@ export const cards: card[] = [
     heading: "barre",
     linkText: "preview barre classes",
     link: "https://www.onepeloton.com/classes/barre",
-    workoutIcon: barreIcon
+    workoutIcon: BarreIcon
   },
   {
     imageURL:
@@ -82,7 +82,7 @@ export const cards: card[] = [
     heading: "stretching",
     linkText: "preview stretching classes",
     link: "https://www.onepeloton.com/classes/stretching",
-    workoutIcon: stretchingIcon
+    workoutIcon: StretchingIcon
   },
   {
     imageURL:
@@ -90,7 +90,7 @@ export const cards: card[] = [
     heading: "walking",
     linkText: "preview walking classes",
     link: "https://www.onepeloton.com/classes/walking",
-    workoutIcon: walkingIcon
+    workoutIcon: WalkingIcon
   },
   {
     imageURL:
@@ -98,6 +98,6 @@ export const cards: card[] = [
     heading: "pilates",
     linkText: "preview pilates classes",
     link: "https://www.onepeloton.com/classes/pilates",
-    workoutIcon: pilatesIcon
+    workoutIcon: PilatesIcon
   },
 ];
