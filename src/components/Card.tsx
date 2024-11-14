@@ -5,8 +5,8 @@ const Card = ({card}:{card:cardType}) => {
   return (
     <li key={card.heading}>
         <article className='card-content'>
-            <a href={card.link} className='card-image'>
-                <img src={card.imageURL} alt={card.heading} />
+            <a href={card.link} className='image-container'>
+                <img src={card.imageURL} alt={card.heading} className='card-image' />
                 <div className='workout-icon'>
                     <card.workoutIcon/>
                 </div>
