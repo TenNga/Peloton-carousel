@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import {ReactComponent as PrevIcon } from '../assets/icons/prevIcon.svg';
 import {ReactComponent as NextIcon } from '../assets/icons/nextIcon.svg';
 import { cards } from '../constants/appConstants';
@@ -7,17 +7,24 @@ import Card from './Card';
 const Carousel = () => {
 
     const sliderRef = useRef<HTMLUListElement>(null);
-    const slideRef = useRef<HTMLLIElement>(null);
+    const [currentSlide, setCurrentSlide] = useState(0);
 
     const renderSlides = cards.map(card => <Card key={card.heading} card={card} />)
+
+    const renderDot = cards.map((c,i) => {
+        return <li key={c.heading} className={`dot ${currentSlide === i && 'current-dot'}`}></li>
+    })
+
     const handleSliderClick = (event:React.MouseEvent<HTMLLIElement>) => {
         const clickedTarget = event.target as HTMLLIElement;
         
         if (sliderRef.current) {
             if(clickedTarget.parentElement?.getAttribute('data-next')){
                 sliderRef.current.scrollLeft += 288;
+                setCurrentSlide(prev => prev + 1)
             }else {
                 sliderRef.current.scrollLeft -= 288;
+                setCurrentSlide(prev => prev - 1)
             }
         }
     }
@@ -26,7 +33,7 @@ const Carousel = () => {
   return (
     <section className='main-slider-container'>
         <h1 className='slider-heading'>Preview thousands of classes on the Peloton App</h1>
-        <div className='carousel-container' draggable="true"  style={{ overflowX: 'auto' }}>
+        <div className='carousel-container' style={{ overflowX: 'auto' }}>
             <ul className='slide-controls'>
                 <li onClick={handleSliderClick}>
                     <button className='slide-prev-btn slide-control' data-prev>
@@ -41,8 +48,14 @@ const Carousel = () => {
                 </li>
             </ul>
             <div className='slide-container'>
-                <ul ref={sliderRef}  className='slide-list'>
+                <ul ref={sliderRef}  className='slide-list' draggable="true" >
                     {renderSlides}
+                </ul>
+            </div>
+
+            <div className='dot-container'>
+                <ul className='dot-list'>
+                    {renderDot}
                 </ul>
             </div>
         </div>

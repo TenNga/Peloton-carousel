@@ -13,10 +13,7 @@
 .carousel-container {
   width: 100%;
   position: relative;
-  overflow: auto;
-  &::-webkit-scrollbar {
-    display: none;
-  }
+  
 }
 
 .slide-controls {
@@ -70,6 +67,9 @@
   gap: 24px;
   overflow-x: auto;
   scroll-behavior: smooth;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .card-content {
@@ -146,5 +146,37 @@
   }
 }
 
+.dot-container {
+  margin-top: 24px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+.dot-list {
+  list-style-type: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: thistle;
+  transition: background-color 0.5s;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  -webkit-transition: background-color 0.5s;
+  -moz-transition: background-color 0.5s;
+  -ms-transition: background-color 0.5s;
+  -o-transition: background-color 0.5s;
+}
+
+.current-dot {
+  background-color: gray;
+}
 
