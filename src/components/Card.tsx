@@ -1,7 +1,8 @@
 import React from 'react'
 import { cardType } from '../types/globle';
 
-const Card = ({card}:{card:cardType}) => {
+const Card = ({card} : { card: cardType}) => {
+
   return (
     <li key={card.heading}>
         <article className='card-content'>

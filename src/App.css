@@ -13,6 +13,10 @@
 .carousel-container {
   width: 100%;
   position: relative;
+  overflow: auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .slide-controls {
@@ -23,6 +27,7 @@
   width: 32px;
   height: 32px;
   padding: 8px;
+  border: none;
   background-color: #D3D3D3;
   display: flex;
   justify-content: center;
@@ -63,7 +68,7 @@
   list-style-type: none;
   display: flex;
   gap: 24px;
-  overflow-x: scroll;
+  overflow-x: auto;
   scroll-behavior: smooth;
 }
 
