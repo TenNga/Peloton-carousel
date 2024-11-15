@@ -1,8 +1,9 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import {ReactComponent as PrevIcon } from '../assets/icons/prevIcon.svg';
 import {ReactComponent as NextIcon } from '../assets/icons/nextIcon.svg';
 import { cards } from '../constants/appConstants';
 import Card from './Card';
+import { isDisabled } from '@testing-library/user-event/dist/utils';
 
 const Carousel = () => {
 
@@ -20,10 +21,10 @@ const Carousel = () => {
         
         if (sliderRef.current) {
             if(clickedTarget.parentElement?.getAttribute('data-next')){
-                sliderRef.current.scrollLeft += 288;
+                sliderRef.current.scrollLeft += 312;
                 setCurrentSlide(prev => prev + 1)
             }else {
-                sliderRef.current.scrollLeft -= 288;
+                sliderRef.current.scrollLeft -= 312;
                 setCurrentSlide(prev => prev - 1)
             }
         }
@@ -36,19 +37,19 @@ const Carousel = () => {
         <div className='carousel-container' style={{ overflowX: 'auto' }}>
             <ul className='slide-controls'>
                 <li onClick={handleSliderClick}>
-                    <button className='slide-prev-btn slide-control' data-prev>
+                    <button className='slide-prev-btn slide-control' data-prev disabled={!currentSlide}>
                         <PrevIcon />
                     </button>
                 </li>
                 <li onClick={handleSliderClick}>
-                    <button className='slide-next-btn slide-control'  data-next>
+                    <button className='slide-next-btn slide-control'  data-next disabled={currentSlide === 11}>
                         <NextIcon />
                     </button>
                     
                 </li>
             </ul>
             <div className='slide-container'>
-                <ul ref={sliderRef}  className='slide-list' draggable="true" >
+                <ul ref={sliderRef}  className='slide-list' draggable="true">
                     {renderSlides}
                 </ul>
             </div>
